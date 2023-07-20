@@ -20,6 +20,7 @@
       devShells = {
         example-turtlebot3-gazebo = import ./examples/turtlebot3-gazebo.nix { inherit pkgs; };
         example-ros2-basic = import ./examples/ros2-basic.nix { inherit pkgs; };
+        ros1-comm = import ./examples/ros1-comm.nix { inherit pkgs; };
       };
     }) // {
       overlays.default = import ./overlay.nix;
@@ -34,7 +35,7 @@
     };
 
   nixConfig = {
-    extra-substituters = [ "https://ros.cachix.org" ];
+    extra-substituters = [ "https://ros.cachix.org" "https://mirror.iscas.ac.cn/nix-channels/store" ];
     extra-trusted-public-keys = [ "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo=" ];
   };
 
