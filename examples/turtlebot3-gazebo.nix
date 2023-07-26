@@ -12,9 +12,7 @@ mkShell {
     glibcLocales
     (buildEnv { paths = [
       rosbash
-      turtlebot3-description
-      turtlebot3-teleop
-      turtlebot3-gazebo
+      turtlesim
       gazebo-plugins
       xacro
     ]; })
@@ -23,4 +21,8 @@ mkShell {
   ROS_HOSTNAME = "localhost";
   ROS_MASTER_URI = "http://localhost:11311";
   TURTLEBOT3_MODEL = "burger";
+  GTK_PATH="${gtk-engine-murrine}/lib/gtk-2.0:${gtk_engines}/lib/gtk-2.0";
+  shellHook = ''
+    export QT_XCB_GL_INTEGRATION=none
+  '';
 }
