@@ -8,8 +8,8 @@ mkShell {
   buildInputs = [
     glibcLocales
     (buildEnv { paths = [
-
       catkin
+      rospack
       ros-core
       roslaunch
       ros-comm
